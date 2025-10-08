@@ -25,12 +25,12 @@ namespace FoodTime.Data.Mappings
                 builder.Property(o => o.Quantity)
                     .IsRequired()
                     .HasColumnName("Quantity")
-                    .HasColumnType("decimal(18,2)")
+                    .HasColumnType("int")
                     .HasDefaultValue(0m);
 
                 builder.Property(o => o.UnitPrice)
                     .IsRequired()
-                    .HasColumnName("Quantity")
+                    .HasColumnName("UnitPrice")
                     .HasColumnType("decimal(18,2)")
                     .HasDefaultValue(0m);
 

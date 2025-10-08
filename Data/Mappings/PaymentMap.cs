@@ -39,7 +39,13 @@ namespace FoodTime.Data.Mappings
                 .HasConversion<string>() // Para converter e salvar como texto
                 .HasMaxLength(16);
 
-            // Relacionamento com order no map de Order
+            // Relacionamentos
+
+            builder.HasOne(p => p.Order)
+                .WithMany(o => o.Payments)
+                .HasForeignKey(p => p.OrderId)
+                .HasConstraintName("FK_Payment_Order")
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

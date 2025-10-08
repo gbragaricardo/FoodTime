@@ -46,13 +46,6 @@ namespace FoodTime.Data.Mappings
 
             //Relacionamentos
 
-            builder.HasOne(o => o.Payment)
-                .WithOne(p => p.Order)
-                .HasForeignKey<Order>(o => o.PaymentId)
-                .HasConstraintName("FK_Order_Payment")
-                .OnDelete(DeleteBehavior.Restrict);
-
-
             builder.HasOne(o => o.Customer)
                 .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.CustomerId)

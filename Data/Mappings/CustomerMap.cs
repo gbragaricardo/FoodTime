@@ -43,7 +43,7 @@ namespace FoodTime.Data.Mappings
                 .HasMaxLength(256);
 
             //Indices
-            builder.HasIndex(c => c.Name, "IX_CustomerName")
+            builder.HasIndex(c => c.Email, "IX_CustomerEmail")
                 .IsUnique();
 
             //Relacionamentos

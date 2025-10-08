@@ -1,4 +1,4 @@
-using FoodTime.Data;
+﻿using FoodTime.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;

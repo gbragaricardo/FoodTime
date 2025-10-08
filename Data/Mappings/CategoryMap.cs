@@ -11,7 +11,7 @@ namespace FoodTime.Data.Mappings
             {
 
                 // Tabela do banco
-                builder.ToTable("ProductCategory");
+                builder.ToTable("Category");
 
                 // Chave primaria
                 builder.HasKey(p => p.Id);
@@ -27,6 +27,10 @@ namespace FoodTime.Data.Mappings
                     .HasColumnName("Name")
                     .HasColumnType("NVARCHAR")
                     .HasMaxLength(32);
+
+                // Relacionamentos
+
+                //Relacionamento com product em ProductMap
 
             }
         }

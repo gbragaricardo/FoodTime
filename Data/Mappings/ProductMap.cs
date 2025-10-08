@@ -28,13 +28,27 @@ namespace FoodTime.Data.Mappings
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(32);
 
-            // Propriedades
             builder.Property(p => p.Description)
                 .IsRequired()
                 .HasColumnName("Description")
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(128);
 
+            builder.Property(p => p.Price)
+                    .IsRequired()
+                    .HasColumnName("Price")
+                    .HasColumnType("decimal(18,2)")
+                    .HasDefaultValue(0m);
+
+            // Relacionamentos
+
+            builder.HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId)
+                .HasConstraintName("FK_Product_Category")
+                .OnDelete(DeleteBehavior.Restrict);
+
+                
         }
     }
 }
